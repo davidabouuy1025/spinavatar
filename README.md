@@ -58,7 +58,7 @@ Want to use your own image?
 
 | | |
 |---|---|
-| **Version** | 0.0.3 |
+| **Version** | 0.0 |
 | **VS Code** | ^1.120.0 |
 | **Category** | Other |
 | **Panel Location** | Explorer Sidebar |
