@@ -1,7 +1,7 @@
 {
   "name": "spinavatar",
   "displayName": "spinavatar",
-  "description": "Let your friend SPIN beside you while you are coding. And when you are depressed, hold and drag them in random direction so that they will be more crazy than you!",
+  "description": "Let your friend SPIN beside you while you are coding.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.120.0"
@@ -9,9 +9,20 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "*"
+  ],
   "main": "./out/extension.js",
   "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "avatarView",
+          "name": "Spin Avatar",
+          "type": "webview"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "spinavatar.helloWorld",
@@ -28,13 +39,13 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.120.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
-    "typescript-eslint": "^8.56.1",
+    "@types/vscode": "^1.120.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
     "eslint": "^9.39.3",
     "typescript": "^5.9.3",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "typescript-eslint": "^8.56.1"
   }
 }
