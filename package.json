@@ -3,7 +3,7 @@
   "displayName": "spinavatar",
   "publisher": "davidabouuy",
   "description": "Let your friend SPIN beside you while you are coding.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.120.0"
   },
