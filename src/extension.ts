@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import * as path from 'path';
 
 export function activate(context: vscode.ExtensionContext) {
     console.log("🔥 spinavatar is running");
@@ -19,18 +20,32 @@ class AvatarProvider implements vscode.WebviewViewProvider {
 
         const webview = webviewView.webview;
 
-        webview.options = {
-            enableScripts: true,
-            localResourceRoots: [
-                vscode.Uri.joinPath(this.context.extensionUri, "media")
-            ]
-        };
+        const config = vscode.workspace.getConfiguration("spinavatar");
+        const imagePath = config.get<string>("imagePath");
 
-        const imgUri = webview.asWebviewUri(
-            vscode.Uri.joinPath(this.context.extensionUri, "media", "picture.jpg")
-        );
+        let imgUri: vscode.Uri;
 
-        webview.html = this.getHtml(imgUri.toString());
+        if (imagePath) {
+            imgUri = vscode.Uri.file(imagePath);
+            webview.options = {
+                enableScripts: true,
+                localResourceRoots: [
+                    vscode.Uri.joinPath(this.context.extensionUri, "media"),
+                    vscode.Uri.file(path.dirname(imagePath))
+                ]
+            };
+        } else {
+            imgUri = vscode.Uri.joinPath(this.context.extensionUri, "media", "picture.jpg");
+            webview.options = {
+                enableScripts: true,
+                localResourceRoots: [
+                    vscode.Uri.joinPath(this.context.extensionUri, "media")
+                ]
+            };
+        }
+
+        const finalUri = webview.asWebviewUri(imgUri);
+        webview.html = this.getHtml(finalUri.toString());
     }
 
     getHtml(image: string) {
