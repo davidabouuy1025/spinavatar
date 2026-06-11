@@ -19,6 +19,12 @@ SpinAvatar adds a bouncy, spinning avatar to your VS Code Explorer panel — a t
 
 > *(Your spinning avatar lives right here in the Explorer panel)*
 
+*(Normal view)*
+![Demo](media/demo.gif)
+
+*(How it looks when users drag the avatar)*
+![Demo-drag](media/demo-drag.gif)
+
 ```
 Explorer
 └── 📁 Your Project
