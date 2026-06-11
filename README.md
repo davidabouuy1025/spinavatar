@@ -38,13 +38,13 @@ Explorer
 
 ## 🖼️ Customization
 
-Want to use your own image? Replace the file at:
+Want to use your own image? 
 
-```
-media/picture.jpg
-```
 
-with any image you like — your pet, your face, your favourite meme.
+1. Press `ctrl + shift + P` to open **Command Palette**
+2. Find `Preferences: Open User Settings (JSON)`
+3. Add this line `"spinavatar.imagePath": "<PICTURE_DIRECTORY>"`
+3. Open **Command Palette** and Find `Developer: Reload Window`
 
 ---
 
@@ -52,7 +52,7 @@ with any image you like — your pet, your face, your favourite meme.
 
 | | |
 |---|---|
-| **Version** | 0.0.1 |
+| **Version** | 0.0.2 |
 | **VS Code** | ^1.120.0 |
 | **Category** | Other |
 | **Panel Location** | Explorer Sidebar |
