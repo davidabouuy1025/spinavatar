@@ -1,6 +1,7 @@
 {
   "name": "spinavatar",
   "displayName": "spinavatar",
+  "publisher": "davidabouuy",
   "description": "Let your friend SPIN beside you while you are coding.",
   "version": "0.0.1",
   "engines": {
